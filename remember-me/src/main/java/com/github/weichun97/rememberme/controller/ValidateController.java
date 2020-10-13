@@ -18,7 +18,7 @@ public class ValidateController {
 
     public final static String SESSION_KEY_IMAGE_CODE = "SESSION_KEY_IMAGE_CODE";
 
-    private SessionStrategy sessionStrategy = new HttpSessionSessionStrategy();
+    private final SessionStrategy sessionStrategy = new HttpSessionSessionStrategy();
 
     @GetMapping("/code/image")
     public void createCode(HttpServletRequest request, HttpServletResponse response) throws IOException {

@@ -1,4 +1,4 @@
-package com.github.weichun97.rememberme.config;
+package com.github.weichun97.sms.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;

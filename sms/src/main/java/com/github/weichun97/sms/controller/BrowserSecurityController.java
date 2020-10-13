@@ -1,4 +1,4 @@
-package com.github.weichun97.controller;
+package com.github.weichun97.sms.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.security.web.DefaultRedirectStrategy;

@@ -32,7 +32,7 @@ public class ValidateCodeFilter extends OncePerRequestFilter {
     @Autowired
     private AuthenticationFailureHandler authenticationFailureHandler;
 
-    private SessionStrategy sessionStrategy = new HttpSessionSessionStrategy();
+    private final SessionStrategy sessionStrategy = new HttpSessionSessionStrategy();
 
     @Override
     protected void doFilterInternal(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse,
