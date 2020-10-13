@@ -10,6 +10,8 @@
         <version>2.3.1.RELEASE</version>
     </parent>
 
+    <packaging>pom</packaging>
+
     <groupId>com.github.weichun97</groupId>
     <artifactId>spring-security-study</artifactId>
     <version>1.0-SNAPSHOT</version>
@@ -17,6 +19,8 @@
     <modules>
         <module>helloworld</module>
         <module>custom-user</module>
+        <module>validate-code</module>
+        <module>remember-me</module>
     </modules>
 
     <properties>
@@ -30,6 +34,20 @@
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
+            </dependency>
+
+            <!-- 图形验证码 -->
+            <dependency>
+                <groupId>org.springframework.social</groupId>
+                <artifactId>spring-social-config</artifactId>
+                <version>1.1.6.RELEASE</version>
+            </dependency>
+
+            <!-- hutool -->
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>5.4.4</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
