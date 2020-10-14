@@ -21,6 +21,9 @@
         <module>custom-user</module>
         <module>validate-code</module>
         <module>remember-me</module>
+        <module>sms</module>
+        <module>session</module>
+        <module>logout</module>
     </modules>
 
     <properties>
