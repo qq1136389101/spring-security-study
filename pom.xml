@@ -28,10 +28,20 @@
 
     <properties>
         <lombok.version>1.18.10</lombok.version>
+        <spring-cloud.version>Greenwich.SR1</spring-cloud.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
+            <!-- cloud -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
             <!-- lombok -->
             <dependency>
                 <groupId>org.projectlombok</groupId>
