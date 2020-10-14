@@ -30,12 +30,12 @@ public class SmsAuthenticationConfig extends SecurityConfigurerAdapter<DefaultSe
         smsAuthenticationFilter.setAuthenticationManager(http.getSharedObject(AuthenticationManager.class));
         smsAuthenticationFilter.setAuthenticationSuccessHandler(authenticationSuccessHandler);
         smsAuthenticationFilter.setAuthenticationFailureHandler(authenticationFailureHandler);
-        
+
         SmsAuthenticationProvider smsAuthenticationProvider = new SmsAuthenticationProvider();
         smsAuthenticationProvider.setUserDetailService(userDetailService);
 
         http.authenticationProvider(smsAuthenticationProvider)
-                .addFilterAfter(smsAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
+                .addFilterBefore(smsAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
 
     }
 }

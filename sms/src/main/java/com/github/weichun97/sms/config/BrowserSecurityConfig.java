@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.security.web.authentication.preauth.AbstractPreAuthenticatedProcessingFilter;
 
 @Configuration
 public class BrowserSecurityConfig extends WebSecurityConfigurerAdapter {
@@ -19,7 +20,7 @@ public class BrowserSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.addFilterBefore(smsCodeFilter, UsernamePasswordAuthenticationFilter.class) // 添加验证码校验过滤器
+        http.addFilterBefore(smsCodeFilter, AbstractPreAuthenticatedProcessingFilter.class) // 添加验证码校验过滤器
                 .formLogin() // 表单登录
                 // http.httpBasic() // HTTP Basic
                 .loginPage("/authentication/require") // 登录跳转 URL
@@ -29,7 +30,8 @@ public class BrowserSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .authorizeRequests() // 授权配置
                 .antMatchers("/authentication/require",
-                        "/login.html", "/code/image","/code/sms").permitAll() // 无需认证的请求路径
+                        "/login.html",
+                        "/code/sms").permitAll() // 无需认证的请求路径
                 .anyRequest()  // 所有请求
                 .authenticated() // 都需要认证
                 .and()
